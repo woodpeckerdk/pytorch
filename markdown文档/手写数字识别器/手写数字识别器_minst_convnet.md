@@ -100,7 +100,7 @@ print('标签是：',train_dataset[idx][1])
 
 
     
-![png](https://github.com/woodpeckerdk/pytorch/blob/main/markdown%E6%96%87%E6%A1%A3/%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%E5%99%A8/%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%E5%99%A8_minst_convnet_files/%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%E5%99%A8_minst_convnet_6_1.png)
+![png](%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%E5%99%A8_minst_convnet_files/%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%E5%99%A8_minst_convnet_6_1.png)
     
 
 
