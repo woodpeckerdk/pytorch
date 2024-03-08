@@ -1,14 +1,9 @@
-# 我卷卷卷
+# Pytorch手写数字识别器
 
 在这节课中，我们学习了如何使用torchvision加载图像库，如何构建一个简单的卷积神经网络，并了解如何训练这个卷积神经网络
 之后，我们还学会了如何对训练好的卷积网络进行分析
+导入所需的包：  
 
-本文件是集智学园http://campus.swarma.org 出品的“火炬上的深度学习”第III课的配套源代码
-
-
-```python
-pip install torchvision
-```
 ```python
 # 导入所需要的包，请保证torchvision已经在你的环境中安装好.
 # 在Windows需要单独安装torchvision包，在命令行运行pip install torchvision即可
@@ -23,7 +18,6 @@ import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 import numpy as np
 
-%matplotlib inline
 ```
 
 ## 一、加载数据
