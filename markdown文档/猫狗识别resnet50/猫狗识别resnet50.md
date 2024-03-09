@@ -61,7 +61,7 @@ class DatasetLoader(Dataset):
     def __len__(self):
         return len(self.data)
 ```
-DatasetLoader类由四个部分组成：  
+DatasetLoader类由四个部分组成：    
 1.`__init__`：包含1个输入参数csv_path，在外部传入csv_path后，将读取后的数据存入self.data中。self.current_dir则是获取了当前代码所在目录的绝对路径，为后续读取图像做准备。
 2. preprocess_image：此函数用于图像预处理。首先，它构造图像文件的绝对路径，然后使用PIL库打开图像。接着，定义了一系列图像变换：调整图像大小至256x256、转换图像为张量、对图像进行标准化处理，最终，返回预处理后的图像。
 3. `__getitem__`：当数据集类被循环调用时，__getitem__方法会返回指定索引index的数据，即图像和标签。首先，它根据索引从self.data中取出图像路径和标签。然后，调用prepogress_image方法来处理图像数据。最后，将处理后的图像数据和标签转换为整型后返回。
@@ -121,7 +121,7 @@ else:
 model.to(torch.device(device))
 ```
 ### 2.5 设置超参数、优化器、损失函数
-**超参数**
+**超参数**  
 设置训练轮次为20轮，学习率为1e-4，训练批次为8，分类数为2分类。
 ```
 num_epochs = 20
@@ -129,15 +129,14 @@ lr = 1e-4
 batch_size = 8
 num_classes = 2
 ```
-**损失函数与优化器**
+**损失函数与优化器**  
 设置损失函数为交叉熵损失，优化器为Adam。
 ```
 criterion = torch.nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 ```
 ### 2.6 初始化SwanLab
-**设置初始化配置参数**
-
+**设置初始化配置参数**  
 swanlab库使用swanlab.init设置实验名、实验介绍、记录超参数以及日志文件的保存位置。
 打开可视化看板需要根据日志文件完成。
 ```
@@ -165,11 +164,6 @@ swanlab.init(
 ### 2.7 训练函数
 我们定义1个训练函数train： 
 ```
-作者：林泽毅
-链接：https://www.zhihu.com/question/478789646/answer/3362166804
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
 def train(model, device, train_dataloader, optimizer, criterion, epoch):
     model.train()
     for iter, (inputs, labels) in enumerate(train_loader):
@@ -187,11 +181,6 @@ def train(model, device, train_dataloader, optimizer, criterion, epoch):
 ### 2.8 测试函数
 我们定义1个测试函数test：
 ```
-作者：林泽毅
-链接：https://www.zhihu.com/question/478789646/answer/3362166804
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
 def test(model, device, test_dataloader, epoch):
     model.eval()
     correct = 0
@@ -236,17 +225,11 @@ print("Training complete")
 Gradio是一个开源的Python库，旨在帮助数据科学家、研究人员和从事机器学习领域的开发人员快速创建和共享用于机器学习模型的用户界面。
 在这里我们使用Gradio来构建一个猫狗分类的Demo界面，编写app.py程序：  
 ```
-作者：林泽毅
-链接：https://www.zhihu.com/question/478789646/answer/3362166804
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
 import gradio as gr
 import torch
 import torchvision.transforms as transforms
 import torch.nn.functional as F
 import torchvision
-
 
 # 加载与训练中使用的相同结构的模型
 def load_model(checkpoint_path, num_classes):
@@ -269,7 +252,6 @@ def load_model(checkpoint_path, num_classes):
     model.load_state_dict(torch.load(checkpoint_path, map_location=device))
     model.eval()  # Set model to evaluation mode
     return model
-
 
 # 加载图像并执行必要的转换的函数
 def process_image(image, image_size):
