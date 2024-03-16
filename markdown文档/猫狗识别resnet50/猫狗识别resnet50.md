@@ -214,7 +214,7 @@ print("Training complete")
 
 我们运行train.py：  
 ![alt 开始训练](https://pic1.zhimg.com/80/v2-685ecfb796f3157adebaeaf0513e2a16_1440w.webp?source=2c26e567)
-在训练开始时候，你的训练目录下应该会多1个logs文件夹，里面存放着你的训练过程数据。打开终端，输入swanlab watch --logdir logs开启SwanLab实验看板：
+在训练开始时候，你的训练目录下应该会多1个logs文件夹，里面存放着你的训练过程数据。打开终端，输入swanlab watch --logdir swanlog开启SwanLab实验看板：
 ![alt 打开swanlab面板](https://picx.zhimg.com/80/v2-1c375928d958edd56b35e79199e698ca_1440w.webp?source=2c26e567)
 点开 http:127.0.0.1:5092 ，将在浏览器中看到实验看板。
 默认页面是Project DashBoard，包含了项目信息和一个对比实验表格：
